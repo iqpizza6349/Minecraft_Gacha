@@ -61,26 +61,25 @@ public class GachaBoxResult {
         meta.addEffect(FireworkEffect.builder().with(type).withColor(color).flicker(true).build());
 
         firework.setFireworkMeta(meta);
-        firework.detonate();
     }
 
     public void result(Player player, Object item) {
-        player.sendTitle("Selected from Gacha box", String.valueOf(item), -1, -1, -1);
+        player.sendTitle("Selected from Gacha box", String.valueOf(item), 10, 70, 20);
         Firework firework = (Firework) player.getWorld().spawnEntity(player.getLocation(), EntityType.FIREWORK);
         FireworkMeta meta = firework.getFireworkMeta();
 
         if (item instanceof EntityType type) {
-            customFireWork(firework, meta, 2, FireworkEffect.Type.CREEPER, Color.BLACK);
+            customFireWork(firework, meta, 10, FireworkEffect.Type.CREEPER, Color.BLACK);
             spawnEntity(player, type);
             return;
         }
         if (item instanceof Material material) {
-            customFireWork(firework, meta, 3, FireworkEffect.Type.BURST, Color.OLIVE);
+            customFireWork(firework, meta, 10, FireworkEffect.Type.BURST, Color.OLIVE);
             giveItem(player, material);
             return;
         }
         if (item instanceof PotionEffectType effectType) {
-            customFireWork(firework, meta, 5, FireworkEffect.Type.STAR, Color.AQUA);
+            customFireWork(firework, meta, 10, FireworkEffect.Type.STAR, Color.AQUA);
             giveEffect(player, effectType);
         }
     }

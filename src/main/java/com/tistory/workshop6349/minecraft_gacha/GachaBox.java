@@ -34,6 +34,7 @@ public class GachaBox {
                 return;
             }
             openBox(player, plugin); // 가챠 상자 작동
+            event.setCancelled(true);
         }
     }
 
