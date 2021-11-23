@@ -1,5 +1,6 @@
 package com.tistory.workshop6349.minecraft_gacha;
 
+import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;

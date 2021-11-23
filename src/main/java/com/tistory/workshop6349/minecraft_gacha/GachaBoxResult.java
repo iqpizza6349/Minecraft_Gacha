@@ -28,6 +28,7 @@ public class GachaBoxResult {
         effects.addAll(Arrays.asList(PotionEffectType.values()));
         objectList.addAll(materials);
         objectList.addAll(effects);
+        objectList.addAll(entities);
     }
 
     public GachaBoxResult(Player player, Plugin plugin) {

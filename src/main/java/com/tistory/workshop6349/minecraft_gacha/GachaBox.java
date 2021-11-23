@@ -1,5 +1,6 @@
 package com.tistory.workshop6349.minecraft_gacha;
 
+import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
@@ -26,14 +27,19 @@ public class GachaBox {
         if (player.getInventory().getItemInMainHand().getType() == Material.SHULKER_BOX
                 && player.getInventory().getItemInMainHand().containsEnchantment(Enchantment.LUCK)
                 && (event.getAction() == Action.RIGHT_CLICK_AIR || event.getAction() == Action.RIGHT_CLICK_BLOCK)) {
-
+            if (player.getGameMode() == GameMode.CREATIVE
+                    || player.getGameMode() == GameMode.SPECTATOR
+                    || player.getGameMode() == GameMode.ADVENTURE) {
+                player.sendMessage("This plugin is for only SURVIVAL");
+                return;
+            }
             openBox(player, plugin); // 가챠 상자 작동
-            event.setCancelled(true); // 설치는 안된다.
         }
     }
 
     public static void openBox(Player player, Plugin plugin) {
         // 랜덤 클래스 사용하여 랜덤하게 작동
+        player.getInventory().setItemInMainHand(new ItemStack(Material.AIR));
         new GachaBoxResult(player, plugin);
     }
 
