@@ -22,7 +22,7 @@ public class EventListener implements Listener {
     @EventHandler
     public void onPlayerJoinEvent(PlayerJoinEvent event) {
         event.setJoinMessage("Hello, " + event.getPlayer().getName());
-        new BossBarManagement(event.getPlayer(), this.plugin);
+         new BossBarManagement(event.getPlayer(), this.plugin);
     }
 
     @EventHandler

@@ -1,5 +1,6 @@
 package com.tistory.workshop6349.minecraft_gacha.command;
 
+import com.tistory.workshop6349.minecraft_gacha.GachaBox;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.boss.BarColor;
@@ -28,6 +29,10 @@ public class CommandManager implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
         if (sender instanceof Player player) {
+            if (label.equalsIgnoreCase("test")) {
+                GachaBox.createGachaBox(player);
+            }
+
             if (label.equalsIgnoreCase("timer")) {
                 if (args.length == 2) {
 

@@ -14,6 +14,7 @@ public final class Minecraft_Gacha extends JavaPlugin {
         // Plugin startup logic
         consoleSender.sendMessage("[ activate plugin ]");
         getServer().getPluginManager().registerEvents(new EventListener(this), this);
+        getCommand("test").setExecutor(new CommandManager(this));
         BossBarManagement.userBossBars.clear();
         BossBarManagement.timer.clear();
     }

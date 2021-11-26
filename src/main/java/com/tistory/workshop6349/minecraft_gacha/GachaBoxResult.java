@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.Random;
 
 public class GachaBoxResult {
+
     public static List<EntityType> entities = new ArrayList<>();
     public static List<Material> materials = new ArrayList<>();
     public static List<PotionEffectType> effects = new ArrayList<>();
@@ -64,7 +65,7 @@ public class GachaBoxResult {
     }
 
     public void result(Player player, Object item) {
-        player.sendTitle("Selected from Gacha box", String.valueOf(item), 10, 70, 20);
+        player.sendTitle("가챠 상자 결과", String.valueOf(item), 10, 70, 20);
         Firework firework = (Firework) player.getWorld().spawnEntity(player.getLocation(), EntityType.FIREWORK);
         FireworkMeta meta = firework.getFireworkMeta();
 

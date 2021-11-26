@@ -5,3 +5,7 @@ api-version: 1.17
 authors: [ Iqpizza6349 ]
 description: This plugin is a plugin that allows you to do so-called 'gacha' by right-clicking on a special shulker box that is paid at a specific time. Various things such as mobs, items, and status abnormalities appear through 'gacha'.
 website: https://workshop-6349.tistory.com/
+commands:
+  test:
+    description: blah
+    usage: /test
